@@ -12,9 +12,10 @@ class Questions(models.Model):
     mc4 = models.CharField(max_length=255)
     mc5 = models.CharField(max_length=255)
     correct = models.CharField(max_length=15)
+    date_create = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.subject} || {self.correct}'
+        return f'{self.subject} || {self.correct} || {self.subject}'
 
 
 class QuestionsResources(resources.ModelResource):
